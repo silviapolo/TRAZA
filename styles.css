@@ -1,0 +1,884 @@
+
+/* =================================
+   NODO STUDIO - ESTILOS GENERALES
+================================= */
+
+:root {
+    --cream: #F4EFE6;
+    --ink: #604438;
+    --granate: #762F43;
+    --lime: #E8CDD0;
+    --white: #FFFCF8;
+    --grey: #927D70;
+    --line: rgba(96, 68, 56, 0.20);
+    --beige: #D7C5AD;
+    --vino: #4A1728;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 110px 0;
+}
+
+.eyebrow {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* =================================
+   CABECERA
+================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244, 239, 230, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -4px;
+}
+
+.logo span {
+    color: var(--granate);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a:not(.nav-contact):hover {
+    color: var(--granate);
+}
+
+.nav-contact {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 13px 20px;
+    border-radius: 30px;
+    transition: 0.25s;
+}
+
+.nav-contact:hover {
+    background: var(--granate);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    padding-top: 90px;
+    padding-bottom: 35px;
+    min-height: 690px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-top,
+.hero-bottom,
+.hero-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.availability {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.availability-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    background: #8B9A6B;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(65px, 10.5vw, 145px);
+    line-height: 0.86;
+    letter-spacing: -0.09em;
+    font-weight: 700;
+    margin: 75px 0;
+}
+
+.blue-dot {
+    color: var(--granate);
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--ink);
+}
+
+.hero-bottom {
+    align-items: flex-end;
+}
+
+.hero-bottom p {
+    max-width: 390px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #806B5F;
+}
+
+.round-link {
+    width: 60px;
+    height: 60px;
+    background: var(--granate);
+    color: var(--white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    transition: transform 0.3s;
+}
+
+.round-link:hover {
+    transform: translateY(6px);
+}
+
+.hero-decoration {
+    border-top: 1px solid var(--line);
+    margin-top: 55px;
+    padding-top: 17px;
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* =================================
+   TITULARES DE SECCIÓN
+================================= */
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(45px, 7vw, 85px);
+    letter-spacing: -0.07em;
+    line-height: 0.98;
+    margin-top: 25px;
+}
+
+.section-heading h2 span{
+    color: var(--vino);
+}
+.about-content h2 span {
+    color: var(--granate);
+}
+
+/* =================================
+   SERVICIOS
+================================= */
+
+.services {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(244, 239, 230, 0.25);
+    border-left: 1px solid rgba(244, 239, 230, 0.25);
+}
+
+.service-card {
+    position: relative;
+    min-height: 290px;
+    padding: 25px;
+    border-right: 1px solid rgba(244, 239, 230, 0.25);
+    border-bottom: 1px solid rgba(244, 239, 230, 0.25);
+    transition: background 0.3s, color 0.3s;
+}
+
+.service-card:hover {
+    background: var(--lime);
+    color: var(--ink);
+}
+
+.service-number {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+}
+
+.service-icon {
+    margin: 35px 0 25px;
+    font-size: 30px;
+    color: var(--beige);
+}
+
+.service-card:hover .service-icon {
+    color: var(--granate);
+}
+
+.service-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 21px;
+    margin-bottom: 13px;
+}
+
+.service-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #D7C5AD;
+}
+
+.service-card:hover p {
+    color: #604438;
+}
+
+/* =================================
+   PROYECTOS
+================================= */
+
+.projects-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.projects-heading > p {
+    max-width: 230px;
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: 10px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.project-image {
+    position: relative;
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Proyecto entrenador personal */
+
+.trainer-project {
+    background:
+        radial-gradient(circle at 75% 30%, #A47B70 0, transparent 35%),
+        linear-gradient(140deg, #76564B, #35251F);
+}
+
+.trainer-mockup {
+    width: 75%;
+    height: 75%;
+    padding: 30px;
+    border: 1px solid rgba(255, 252, 248, 0.25);
+    background: rgba(53, 37, 31, 0.25);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s;
+}
+
+.trainer-mockup strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 0.9;
+    letter-spacing: -3px;
+}
+
+.mockup-label,
+.mockup-button {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.mockup-button {
+    align-self: flex-start;
+    border: 1px solid var(--white);
+    padding: 12px 16px;
+}
+
+/* Proyecto invitación de boda */
+
+.wedding-project {
+    background: #E8CDD0;
+}
+
+.wedding-mockup {
+    width: 68%;
+    height: 80%;
+    background: #F4EFE6;
+    color: #762F43;
+    border: 1px solid #D7B5BB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    box-shadow: 12px 15px 0 rgba(96, 68, 56, 0.12);
+    transition: transform 0.4s;
+}
+
+.wedding-mockup span {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.wedding-mockup strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 0.95;
+    text-align: center;
+    font-weight: 500;
+}
+
+.project-image:hover .trainer-mockup,
+.project-image:hover .wedding-mockup {
+    transform: scale(1.04);
+}
+
+.project-arrow {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 42px;
+    height: 42px;
+    background: var(--granate);
+    color: var(--white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 22px;
+}
+
+.project-info h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 21px;
+}
+
+.project-info p {
+    margin-top: 7px;
+    font-size: 12px;
+    color: var(--grey);
+}
+
+.project-year {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+}
+
+/* =================================
+   SOBRE MÍ
+================================= */
+
+.about {
+    background: var(--lime);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 70px;
+}
+
+.about-symbol {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 180px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -18px;
+    margin-top: 40px;
+}
+
+.about-symbol span {
+    color: var(--granate);
+}
+
+.about-content h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(38px, 5.5vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.07em;
+    margin-bottom: 35px;
+}
+
+.about-content p {
+    max-width: 580px;
+    color: #604438;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.tech-list span {
+    border: 1px solid var(--ink);
+    border-radius: 30px;
+    padding: 11px 18px;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+}
+
+/* =================================
+   PROCESO
+================================= */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.process-grid article {
+    padding: 28px 22px 10px 0;
+}
+
+.process-grid article > span {
+    font-family: "DM Mono", monospace;
+    color: var(--granate);
+    font-size: 13px;
+}
+
+.process-grid h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    margin: 30px 0 12px;
+}
+
+.process-grid p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--grey);
+}
+
+/* =================================
+   CONTACTO
+================================= */
+
+.contact {
+    background: var(--granate);
+    color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 100px;
+}
+
+.contact-intro h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(70px, 10vw, 130px);
+    line-height: 0.85;
+    letter-spacing: -0.09em;
+    margin: 40px 0;
+}
+
+.contact-intro h2 span {
+    color: var(--lime);
+}
+
+.contact-intro > p {
+    max-width: 330px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.contact-note {
+    display: block;
+    margin-top: 60px;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #E8CDD0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    color: var(--white);
+    border: none;
+    border-bottom: 1px solid rgba(255, 252, 248, 0.5);
+    outline: none;
+    border-radius: 0;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #E8CDD0;
+}
+
+.contact-form select option {
+    color: var(--ink);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    margin-top: 25px;
+    background: var(--lime);
+    color: var(--ink);
+    border: none;
+    padding: 19px 22px;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background: var(--cream);
+    transform: translateY(-3px);
+}
+
+.submit-button span {
+    font-size: 18px;
+}
+
+.form-note {
+    font-size: 11px;
+    color: #E8CDD0;
+    line-height: 1.5;
+}
+
+.form-feedback {
+    font-size: 12px;
+    color: var(--lime);
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background: #35251F;
+    color: var(--cream);
+    padding: 35px 0 20px;
+}
+
+.footer-content,
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-content p {
+    font-size: 12px;
+    color: #D7C5AD;
+}
+
+.footer-content > a:last-child,
+.footer-bottom {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(244, 239, 230, 0.2);
+    margin-top: 30px;
+    padding-top: 18px;
+    color: #D7C5AD;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-symbol {
+        font-size: 100px;
+        margin-top: 20px;
+    }
+
+    .contact-grid {
+        gap: 45px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 35px;
+    }
+}
+
+/* =================================
+   MÓVIL
+================================= */
+
+@media (max-width: 650px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .navbar {
+        height: 68px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: var(--ink);
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5% 25px;
+        background: var(--cream);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .nav-links .nav-contact {
+        display: inline-block;
+        padding: 13px 20px;
+        margin-top: 8px;
+    }
+
+    .hero {
+        min-height: 590px;
+        padding-top: 50px;
+    }
+
+    .hero-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 13vw, 85px);
+        margin: 65px 0;
+    }
+
+    .hero-bottom p {
+        max-width: 260px;
+        font-size: 14px;
+    }
+
+    .round-link {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .hero-decoration {
+        font-size: 8px;
+    }
+
+    .section-heading h2 {
+        font-size: 52px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 240px;
+    }
+
+    .projects-heading {
+        display: block;
+    }
+
+    .projects-heading > p {
+        margin-top: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-image {
+        height: 310px;
+    }
+
+    .project-info h3 {
+        font-size: 17px;
+    }
+
+    .about-content h2 {
+        font-size: 43px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .contact-intro h2 {
+        font-size: 85px;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        gap: 15px;
+        font-size: 8px;
+    }
+}
+
+/* =================================
+   ACCESIBILIDAD
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
