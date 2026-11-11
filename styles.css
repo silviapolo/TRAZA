@@ -166,7 +166,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero h1 {
     font-family: var(--serif);
     font-size: clamp(76px, 11.5vw, 148px);
-    line-height: .91;
+    line-height: 1.08;
     letter-spacing: -6px;
     font-weight: 500;
 }
