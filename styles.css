@@ -167,7 +167,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
     font-family: var(--serif);
     font-size: clamp(76px, 11.5vw, 148px);
     line-height: 1.08;
-    letter-spacing: -6px;
+    letter-spacing: -2px;
     font-weight: 500;
 }
 
